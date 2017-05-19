@@ -31,6 +31,12 @@ public class TransactionService {
         return generateSummaryFromTransactions(transactions);
     }
 
+    public TransactionSummary generateSummaryByTypeAndCurrencyInOtherCurrency(String type, String currency, String otherCurrency) throws NotFoundException, DaoException {
+        TransactionSummary summary = this.generateSummaryByTypeAndCurrency(type, currency);
+
+        return null;
+    }
+
     private TransactionSummary generateSummaryFromTransactions(List<Transaction> transactions) {
         String currency = transactions.get(0).getCurrency();
         String type = transactions.get(0).getType();
